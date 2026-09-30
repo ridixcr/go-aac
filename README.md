@@ -1,24 +1,6 @@
 # go-aac
 
-<!-- badges:start -->
-[![GitHub stars](https://img.shields.io/github/stars/skrashevich/go-aac?style=flat-square)](https://github.com/skrashevich/go-aac/stargazers)
-[![Last commit](https://img.shields.io/github/last-commit/skrashevich/go-aac?style=flat-square)](https://github.com/skrashevich/go-aac/commits/main)
-[![License](https://img.shields.io/github/license/skrashevich/go-aac?style=flat-square)](https://github.com/skrashevich/go-aac/blob/main/LICENSE)
-<!-- badges:end -->
-
-
-<div align="center">
-
-[![stars](https://img.shields.io/github/stars/skrashevich/go-aac?style=flat-square&logo=github)](https://github.com/skrashevich/go-aac/stargazers)
-[![releases](https://img.shields.io/github/downloads/skrashevich/go-aac/total?color=blue&style=flat-square&logo=github)](https://github.com/skrashevich/go-aac/releases)
-[![goreport](https://goreportcard.com/badge/github.com/skrashevich/go-aac)](https://goreportcard.com/report/github.com/skrashevich/go-aac)
-[![Go Reference](https://pkg.go.dev/badge/github.com/skrashevich/go-aac.svg)](https://pkg.go.dev/github.com/skrashevich/go-aac)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/skrashevich/go-aac)
-
 A pure Go implementation of an AAC (Advanced Audio Codec) decoder supporting ADTS format.
-
-</div>
-
 
 ## Features
 

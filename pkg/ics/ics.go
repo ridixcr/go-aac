@@ -308,12 +308,19 @@ func (ics *ICStream) decodeSpectralData(stream BitReader) error {
 				for group := 0; group < groupLen; group++ {
 					energy := 0.0
 					for k := 0; k < width; k++ {
-						ics.randomState = int32(uint32(ics.randomState) * 1015568748)
+						// rx-player: LCG completo (Numerical Recipes, el mismo que usa FFmpeg
+						// para PNS). El original multiplicaba por una constante múltiplo de 4
+						// sin incremento: el estado colapsaba a 0, la energía quedaba en 0 y
+						// sf/sqrt(0) llenaba el espectro (y el overlap de la IMDCT) de NaN.
+						ics.randomState = int32(uint32(ics.randomState)*1664525 + 1013904223)
 						data[off+k] = float32(ics.randomState)
 						v := float64(data[off+k])
 						energy += v * v
 					}
-					scale := scaleFactors[idx] / float32(math.Sqrt(energy))
+					scale := float32(0)
+					if energy > 0 {
+						scale = scaleFactors[idx] / float32(math.Sqrt(energy))
+					}
 					for k := 0; k < width; k++ {
 						data[off+k] *= scale
 					}
